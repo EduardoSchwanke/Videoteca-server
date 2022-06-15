@@ -8,7 +8,7 @@ function connectToDatabase() {
 
     const db = mongoose.connection 
     db.on('error', (error) => {console.log(error)})
-    db.once('open', () => {console.log('connenct to the database')})
+    db.once('open', () => {console.log('connected to the database')})
 }
 
 module.exports = connectToDatabase

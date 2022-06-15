@@ -3,6 +3,7 @@ const Video = require('../models/Video')
 
 module.exports = {
     async ValidateId(request, response, next) {
+        // params = id passado na rota
         const { id } = request.params
 
         if(!isUuis(id)){
@@ -16,9 +17,9 @@ module.exports = {
                 return response.status(404).json({error: "video not found."})
             }
         }catch(err){
-            response.status(500).json({error: err.massage})
+            return response.status(500).json({error: err.massage})
         }
-
+ 
         next()
     }
 }

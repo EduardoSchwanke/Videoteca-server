@@ -15,7 +15,7 @@ const videoSchema = new mongoose.Schema({
     },
     liked: {
         type: Boolean,
-        required: false
+        default: false
     }
 })
 
